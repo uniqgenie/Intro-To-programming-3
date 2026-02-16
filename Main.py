@@ -3,6 +3,7 @@
 import random
 MOVES = ["rock", "paper", "scissors"]
 
+
 def beats(one, two):
     """Return True if move `one` beats move `two`."""
     return ((one == "rock" and two == "scissors") or
@@ -112,7 +113,10 @@ class Game:
 
         while True:
             if target_wins is not None:
-                if self.p1.score >= target_wins or self.p2.score >= target_wins:
+                if (
+                    self.p1.score >= target_wins
+                    or self.p2.score >= target_wins
+                ):
                     break
 
             keep_playing = self.play_round()
