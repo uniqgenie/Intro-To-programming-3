@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rock Paper Scissors</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app">
+      <header class="header">
+        <h1>Rock • Paper • Scissors</h1>
+        <p class="sub">Play against different computer strategies.</p>
+      </header>
+
+      <section class="panel">
+        <div class="row">
+          <label class="field">
+            <span>Your name</span>
+            <input id="playerName" type="text" placeholder="Human" />
+          </label>
+
+          <label class="field">
+            <span>Opponent</span>
+            <select id="opponent">
+              <option value="rock">Always Rock</option>
+              <option value="random" selected>Random</option>
+              <option value="reflect">Reflect</option>
+              <option value="cycle">Cycle</option>
+            </select>
+          </label>
+
+          <label class="field">
+            <span>Match</span>
+            <select id="matchType">
+              <option value="2">Best of 3 (first to 2)</option>
+              <option value="3">Best of 5 (first to 3)</option>
+              <option value="0">Until quit</option>
+            </select>
+          </label>
+        </div>
+
+        <div class="row actions">
+          <button id="startBtn" class="btn primary">Start / Restart</button>
+          <button id="quitBtn" class="btn" disabled>Quit match</button>
+        </div>
+      </section>
+
+      <section class="panel">
+        <div class="scoreboard">
+          <div class="card">
+            <div class="label" id="p1Label">Human</div>
+            <div class="score" id="p1Score">0</div>
+          </div>
+          <div class="card">
+            <div class="label" id="p2Label">Computer</div>
+            <div class="score" id="p2Score">0</div>
+          </div>
+          <div class="card">
+            <div class="label">Round</div>
+            <div class="score" id="roundNum">0</div>
+          </div>
+        </div>
+
+        <div class="moveButtons">
+          <button class="btn big" data-move="rock" disabled>🪨 Rock</button>
+          <button class="btn big" data-move="paper" disabled>📄 Paper</button>
+          <button class="btn big" data-move="scissors" disabled>
+            ✂️ Scissors
+          </button>
+        </div>
+
+        <div class="status" id="status">Click <b>Start</b> to begin.</div>
+
+        <div class="logWrap">
+          <h2>History</h2>
+          <ul id="log" class="log"></ul>
+        </div>
+      </section>
+
+      <footer class="footer">
+        <small>Pure HTML/CSS/JS — deploy on Vercel as a static site.</small>
+      </footer>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
